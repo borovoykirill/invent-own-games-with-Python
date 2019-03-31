@@ -1,2 +1,2 @@
 # invent-own-games-with-Python
-Learning Python by the book Al Sweigart - INVENT YOUR OWN COMPUTER GAMES WITH PYTHON (2018)
+Learning Python by the book Al Sweigart - Invent your own computer games with Python (2018)
