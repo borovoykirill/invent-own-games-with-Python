@@ -37,7 +37,7 @@ HANGMAN_PICS = ['''
      ===''']
 words = 'аист акула бабуин баран барсук бобр бык верблюд волк воробей выдра голубь гусь жаба зебра змея индюк кит кобра коза козёл койот корова кошка кролик крыса курица лама лебедь лев лиса орёл панда паук питон попугай собака сова тигр тюлень утка форель хорёк черепаха ястреб'.split()
 
-def getRandomWord(worldList):
+def getRandomWord(wordList):
     # This function returns a random string from given list.
     wordIndex = random.randint(0, len(wordList) - 1)
     return wordList[wordIndex]
