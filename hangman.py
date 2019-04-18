@@ -39,8 +39,8 @@ words = 'аист акула бабуин баран барсук бобр бы�
 
 def getRandomWord(worldList):
     # This function returns a random string from given list.
-    wordIndex = random.randint(0, len(worldList) - 1)
-    return worldList[wordIndex]
+    wordIndex = random.randint(0, len(wordList) - 1)
+    return wordList[wordIndex]
 
 def displayBoard(missedLetters, correctLetters, secretWord):
     print(HANGMAN_PICS[len(missedLetters)])
@@ -67,19 +67,19 @@ def getGuess(alreadyGuessed):
             print('Введите букву.')
             guess = input()
             guess = guess.lower()
-            if len(guess) !=1:
+            if len(guess) != 1:
                 print('Пожалуйста, введите одну букву.')
             elif guess in alreadyGuessed:
                 print('Вы уже называли эту букву. Назовите другую.')
-            elif guess not in 'абвгдёежзийклмопрстуфхцчшщъьыэюя':
-                print('Пожалуйста, введите букву')
+            elif guess not in 'абвгдеёжзийклмопрстуфхцчшщъьыэюя':
+                print('Пожалуйста, введите букву.')
             else:
                 return guess
 
 def playAgain():
     # This function returns True, if player wants play again, otherwise returns False.
     print('Хотите сыграть еще, да или нет?')
-
+    return input().lower().startswith('д')
 
 
 print('В И С Е Л И Ц А')
@@ -112,8 +112,7 @@ while True:
         # Check whether the player has exceeded attempts
         if len(missedLetters) == len(HANGMAN_PICS) - 1:
             displayBoard(missedLetters, correctLetters, secretWord)
-            print('Вы исчерпали все попытки!\nНе угадано букв: ' + str(len(missedLetters)) + ' и угадано букв: ' + str(
-                len(correctLetters)) + '. Было загадано слово "' + secretWord + '".')
+            print('Вы исчерпали все попытки!\nНе угадано букв: ' + str(len(missedLetters)) + ' и угадано букв: ' + str(len(correctLetters)) + '. Было загадано слово "' + secretWord + '".')
             gameIsDone = True
 
         # Asks if the player wants to play again (only if the game is over).
