@@ -109,7 +109,7 @@ while True:
     else:
         missedLetters = missedLetters + guess
 
-        # Check whether the player has exceeded attempts
+        # Check whether the player has exceeded attempts limits
         if len(missedLetters) == len(HANGMAN_PICS) - 1:
             displayBoard(missedLetters, correctLetters, secretWord)
             print('Вы исчерпали все попытки!\nНе угадано букв: ' + str(len(missedLetters)) + ' и угадано букв: ' + str(len(correctLetters)) + '. Было загадано слово "' + secretWord + '".')
